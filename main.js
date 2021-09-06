@@ -42,14 +42,18 @@ setTimeout(
        for (let i = 0; i < 5; i++) {
            let inputUtente = parseInt(prompt("Inserisci un numero!!"));
            arrayNumeriUtente.push(inputUtente);
-           
-        // all interno del ciclo, se l'input utente è presente all interno dell array (numeriCasuali)
-           if(arrayNumeriCasuali.includes(arrayNumeriUtente[i])) {
-
-            // riempio l'array dei numeri corrispondenti solamente con i numeri corrispondenti
-            numeriCorrispondenti.push(arrayNumeriUtente[i]);
         }
-       }
+           
+        // all interno del ciclo, creo un altro ciclo  
+        for (let i = 0; i < arrayNumeriUtente.length; i++) {
+            // in cui se l'input utente è presente all interno dell array (numeriCasuali) e non è presente all'interno dell'array delle corrispondenze
+            if(arrayNumeriCasuali.includes(arrayNumeriUtente[i]) && !numeriCorrispondenti.includes(arrayNumeriUtente[i])) {
+
+            // il software riempie l'array dei numeri corrispondenti solamente con i numeri corrispondenti
+            numeriCorrispondenti.push(arrayNumeriUtente[i]);
+
+            }
+        }
     //    console.log(arrayNumeriUtente);
     //    console.log(numeriCorrispondenti);
     
@@ -57,10 +61,10 @@ setTimeout(
        if (numeriCorrispondenti.length > 0) {
         alert("I numeri da te indovinati sono:" + " " + numeriCorrispondenti + " " + "e il tuo punteggio è quindi di:" + " " + numeriCorrispondenti.length);
        } else {
-           alert("Non ne hai indovinato neanche uno!!!!");s
+           alert("Non ne hai indovinato neanche uno!!!!");
        }
     }, 
-    1500 //intervallo di tempo in millisecondi
+    1000 //intervallo di tempo in millisecondi
 );
 
 
