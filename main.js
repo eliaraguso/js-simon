@@ -38,27 +38,24 @@ let numeriCorrispondenti = [];
 
 setTimeout(
     function() {
-        // ciclo for per inserire 5 volte i 5 numeri di input utente in un array
+        // ciclo for per inserire 5 volte i 5 numeri di input utente in un array(inputUtente)
        for (let i = 0; i < 5; i++) {
            let inputUtente = parseInt(prompt("Inserisci un numero!!"));
            arrayNumeriUtente.push(inputUtente);
+           
+        // all interno del ciclo, se l'input utente è presente all interno dell array (numeriCasuali)
+           if(arrayNumeriCasuali.includes(arrayNumeriUtente[i])) {
+
+            // riempio l'array dei numeri corrispondenti solamente con i numeri corrispondenti
+            numeriCorrispondenti.push(arrayNumeriUtente[i]);
+        }
        }
-
-    //    solo quando il ciclo sarà completato 5 volte 
-       if (arrayNumeriUtente.lenght = 5) {
-
-            // se l'array dei numeri generati dal software include i numeri inseriti dall'utente
-
-            for(let i = 0; i <= arrayNumeriUtente; i++) {
-                if(arrayNumeriCasuali.includes(arrayNumeriUtente[i])) {
-
-                    // riempio l'array dei numeri corrispondenti solamente con i numeri corrispondenti
-                    numeriCorrispondenti.push(arrayNumeriUtente[i]);
-                }
-            }
+       console.log(arrayNumeriUtente);
+       console.log(numeriCorrispondenti);
+    
         // il software dice quali e quanti numeri sono stati indovinati
 
-       }
+       
     }, 
     1500 //intervallo di tempo in millisecondi
 );
