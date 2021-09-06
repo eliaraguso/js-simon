@@ -60,7 +60,7 @@ setTimeout(
 
        }
     }, 
-    3000 //intervallo di tempo in millisecondi
+    1500 //intervallo di tempo in millisecondi
 );
 
 
