@@ -3,6 +3,9 @@
 // Dopo 30 secondi l'utente deve inserire, uno alla volta, i numeri che ha visto precedentemente, tramite il prompt().
 // Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei numeri da indovinare sono stati individuati.
 
+// FUNZIONI
+
+
 // Definisco un array contenente 5 numeri casuali con range a 0 a 100
 let arrayNumeriCasuali = [];
 
@@ -26,24 +29,39 @@ alert("I numeri da ricordare sono:" + " " + arrayNumeriCasuali);
 let arrayNumeriUtente = [];
 
 
+// definisco un array vuoto che andrà rimepito solamente con i numeri inseriti dall'utente se questi sono uguali ai numeri generati casualmente dal software
+
+let numeriCorrispondenti = [];
+
+
 // Dopo 30 secondi l'utente deve inserire, uno alla volta, i 5 numeri che ha visto precedentemente, tramite 5 prompt().
 
 setTimeout(
     function() {
         // ciclo for per inserire 5 volte i 5 numeri di input utente in un array
-       for (let index = 0; index < 5; index++) {
-           arrayNumeriUtente.push(parseInt(prompt("Inserisci un numero!!")));
+       for (let i = 0; i < 5; i++) {
+           let inputUtente = parseInt(prompt("Inserisci un numero!!"));
+           arrayNumeriUtente.push(inputUtente);
        }
 
-    //    solo quando il ciclo sarà completato 5 volte il software dice quali e quanti numeri sono stati indovinati
-       if (arrayNumeriUtente.length = 5) {
-        
+    //    solo quando il ciclo sarà completato 5 volte 
+       if (arrayNumeriUtente.lenght = 5) {
+
+            // se l'array dei numeri generati dal software include i numeri inseriti dall'utente
+
+            for(let i = 0; i <= arrayNumeriUtente; i++) {
+                if(arrayNumeriCasuali.includes(arrayNumeriUtente[i])) {
+
+                    // riempio l'array dei numeri corrispondenti solamente con i numeri corrispondenti
+                    numeriCorrispondenti.push(arrayNumeriUtente[i]);
+                }
+            }
+        // il software dice quali e quanti numeri sono stati indovinati
+
        }
     }, 
     3000 //intervallo di tempo in millisecondi
 );
-
-
 
 
 // Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei numeri da indovinare sono stati individuati.
