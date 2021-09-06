@@ -50,12 +50,15 @@ setTimeout(
             numeriCorrispondenti.push(arrayNumeriUtente[i]);
         }
        }
-       console.log(arrayNumeriUtente);
-       console.log(numeriCorrispondenti);
+    //    console.log(arrayNumeriUtente);
+    //    console.log(numeriCorrispondenti);
     
         // il software dice quali e quanti numeri sono stati indovinati
-
-       
+       if (numeriCorrispondenti.length > 0) {
+        alert("I numeri da te indovinati sono:" + " " + numeriCorrispondenti + " " + "e il tuo punteggio è quindi di:" + " " + numeriCorrispondenti.length);
+       } else {
+           alert("Non ne hai indovinato neanche uno!!!!");s
+       }
     }, 
     1500 //intervallo di tempo in millisecondi
 );
