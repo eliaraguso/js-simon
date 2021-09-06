@@ -30,14 +30,17 @@ let arrayNumeriUtente = [];
 
 setTimeout(
     function() {
+        // ciclo for per inserire 5 volte i 5 numeri di input utente in un array
        for (let index = 0; index < 5; index++) {
            arrayNumeriUtente.push(parseInt(prompt("Inserisci un numero!!")));
        }
+
+    //    solo quando il ciclo sarà completato 5 volte il software dice quali e quanti numeri sono stati indovinati
        if (arrayNumeriUtente.length = 5) {
-        alert("I numeri inseriti sono:" + " " + arrayNumeriUtente);
+        
        }
     }, 
-    3000
+    3000 //intervallo di tempo in millisecondi
 );
 
 
